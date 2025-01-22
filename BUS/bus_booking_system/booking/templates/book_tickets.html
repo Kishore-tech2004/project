@@ -1,0 +1,141 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Tickets</title>
+    <style>
+         
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7f6;
+        color: #333;
+        line-height: 1.6;
+        text-align: center;
+    }
+    
+    header {
+        background-color: #e6f328;
+        color: #110e0e;
+        text-align: center;
+        padding: 20px 0;
+    }
+    footer {
+        background-color: #f5f11d;
+        color: #0c0909;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    
+    footer p {
+        font-size: 1rem;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Bus Booking System</h1>
+    </header>
+    <h1>Book Tickets</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Book</button>
+    </form>
+    <main>
+        <h2>Your Journey Begins Here!</h2>
+        <p>Explore our available routes and book your tickets easily.</p>
+    </main>
+    <footer>
+        <p>&copy; 2023 Bus Booking System. All rights reserved.</p>
+    </footer>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets</title>
+    <style>
+        
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7f6;
+        color: #333;
+        line-height: 1.6;
+        text-align: center;
+    }
+    
+    header {
+        background-color: #f1e536;
+        color: #0c0a0a;
+        text-align: center;
+        padding: 20px 0;
+    }
+    footer {
+        background-color: #eef130;
+        color: #131111;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    
+    footer p {
+        font-size: 1rem;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Bus Booking System</h1>
+    </header>
+    
+    <div class="container">
+        <h1>Book Your Tickets</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            
+            <h3>Select Seats:</h3>
+            <div class="seats">
+                {% for seat in available_seats %}
+                    <label class="seat">
+                        <input type="checkbox" name="seats" value="{{ seat }}">
+                        Seat {{ seat }}
+                    </label>
+                {% endfor %}
+            </div>
+            
+            <button type="submit" class="btn">Book Tickets</button>
+        </form>
+    </div>
+    <main>
+        <h2>Your Journey Begins Here!</h2>
+        <p>Explore our available routes and book your tickets easily.</p>
+    </main>
+    <footer>
+        <p>&copy; 2023 Bus Booking System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

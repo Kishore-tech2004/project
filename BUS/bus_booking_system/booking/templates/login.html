@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+
+
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7f6;
+        color: #333;
+        line-height: 1.6;
+        text-align: center;
+    }
+    
+    header {
+        background-color: #e5f326;
+        color: #0e0d0a;
+        text-align: center;
+        padding: 20px 0;
+    }
+    footer {
+        background-color: #ddf123;
+        color: #0e0c0c;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    
+    footer p {
+        font-size: 1rem;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Bus Booking System</h1>
+    </header>
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+    <main>
+        <h2>Your Journey Begins Here!</h2>
+        <p>Explore our available routes and book your tickets easily.</p>
+    </main>
+    <footer>
+        <p>&copy; 2023 Bus Booking System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
